@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Payout Sign In",
+    "id": "projects/16190078891452429378/screens/b397d85970ce46798e8f7bc493dc50ab",
+    "html_file": "screens/payout_sign_in.html",
+    "screenshot_file": "screens/payout_sign_in.png",
+    "width": "780",
+    "height": "1806",
+    "deviceType": "MOBILE"
+  },
+  {
+    "title": "Campaign Setup \u2014 Step 1",
+    "id": "projects/16190078891452429378/screens/164bdd5bc9e14f37ba366425f9e085a9",
+    "html_file": "screens/campaign_setup_step_1.html",
+    "screenshot_file": "screens/campaign_setup_step_1.png",
+    "width": "2560",
+    "height": "2530",
+    "deviceType": "DESKTOP"
+  },
+  {
+    "title": "Campaign Setup \u2014 Step 1 (Revised)",
+    "id": "projects/16190078891452429378/screens/14aff8df0d05409f940624dde1329def",
+    "html_file": "screens/campaign_setup_step_1_revised.html",
+    "screenshot_file": "screens/campaign_setup_step_1_revised.png",
+    "width": "2560",
+    "height": "3204",
+    "deviceType": "DESKTOP"
+  },
+  {
+    "title": "PayOut Landing Page",
+    "id": "projects/16190078891452429378/screens/dd085c5eb3404910ad85da40b8f7a936",
+    "html_file": "screens/payout_landing_page.html",
+    "screenshot_file": "screens/payout_landing_page.png",
+    "width": "2560",
+    "height": "2680",
+    "deviceType": "DESKTOP"
+  },
+  {
+    "title": "Business Onboarding",
+    "id": "projects/16190078891452429378/screens/2883e8996daa499f8f3ffeb7212b9c92",
+    "html_file": "screens/business_onboarding.html",
+    "screenshot_file": "screens/business_onboarding.png",
+    "width": "2560",
+    "height": "2048",
+    "deviceType": "DESKTOP"
+  },
+  {
+    "title": "Campaign Setup \u2014 Step 3 (Payment with Updated Artwork)",
+    "id": "projects/16190078891452429378/screens/dff666b7c86c4410954f902240d294b6",
+    "html_file": "screens/campaign_setup_step_3_payment_with_updated_artwork.html",
+    "screenshot_file": "screens/campaign_setup_step_3_payment_with_updated_artwork.png",
+    "width": "2560",
+    "height": "2048",
+    "deviceType": "DESKTOP"
+  }
+]

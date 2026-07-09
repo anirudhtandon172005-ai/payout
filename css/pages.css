@@ -1,0 +1,500 @@
+/* ============================================================
+   PayOut Page-Specific Styles
+   ============================================================ */
+
+/* ── Landing Page ── */
+.landing-hero {
+  padding: 80px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .landing-hero {
+    grid-template-columns: 1fr;
+    padding: 48px 0;
+    gap: 40px;
+  }
+}
+
+.landing-cta-section {
+  padding: 80px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--stack-lg);
+  position: relative;
+  border-top: 1px solid rgba(196, 199, 199, 0.3);
+  margin-top: 64px;
+}
+
+/* ── Sign In Page ── */
+.signin-container {
+  display: flex;
+  min-height: 100vh;
+  padding: 48px var(--margin-mobile);
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .signin-container {
+    padding: 96px var(--margin-desktop);
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.signin-form-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 64px;
+}
+@media (min-width: 768px) {
+  .signin-form-section {
+    width: 50%;
+    padding-right: 48px;
+    margin-bottom: 0;
+  }
+}
+
+.signin-visual-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .signin-visual-section {
+    width: 50%;
+  }
+}
+
+.signin-divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 380px;
+  margin-bottom: 40px;
+}
+.signin-divider-line {
+  flex: 1;
+  height: 1px;
+  background: #9ca3af;
+}
+.signin-divider-text {
+  padding: 0 12px;
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* ── Onboarding Page ── */
+.onboarding-container {
+  width: 100%;
+  max-width: 480px;
+  padding: 0 var(--margin-mobile);
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: var(--stack-lg);
+  padding-bottom: var(--stack-lg);
+  position: relative;
+}
+
+.onboarding-success {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--stack-lg);
+  padding: 0 var(--margin-mobile);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease-in-out;
+}
+.onboarding-success.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Campaign Setup Pages ── */
+.campaign-container {
+  flex: 1;
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 96px var(--margin-mobile) 48px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-lg);
+}
+@media (min-width: 768px) {
+  .campaign-container {
+    padding: 128px 0 64px;
+  }
+}
+
+.campaign-footer {
+  margin-top: var(--stack-lg);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--stack-md);
+  padding-top: var(--gutter);
+}
+@media (max-width: 640px) {
+  .campaign-footer {
+    flex-direction: column-reverse;
+  }
+  .campaign-footer .btn {
+    width: 100%;
+  }
+}
+
+/* ── Campaign Step 1: Scope Toggle ── */
+.scope-details {
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  overflow: hidden;
+}
+.scope-details.hidden {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.scope-details.visible {
+  max-height: 600px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.map-placeholder {
+  position: relative;
+  width: 100%;
+  height: 192px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-surface-container-high);
+  border: 1px solid var(--color-outline-variant);
+}
+.map-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  mix-blend-mode: multiply;
+}
+.map-pin {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.map-search {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-full);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-outline-variant);
+  transition: border-color var(--transition-base);
+}
+.map-search:focus-within {
+  border-color: var(--color-on-surface);
+}
+.map-search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+  color: var(--color-on-surface);
+}
+.map-search input::placeholder {
+  color: var(--color-outline);
+}
+
+/* ── Campaign Step 1: Timeline ── */
+.timeline-track {
+  position: relative;
+  width: 100%;
+  height: 64px;
+  border-radius: 12px;
+  border: 1px solid var(--color-outline-variant);
+  overflow: hidden;
+  background: var(--color-surface-container-highest);
+}
+.timeline-handle {
+  position: absolute;
+  height: 100%;
+  background: var(--color-charcoal);
+  border-radius: 8px;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+  transition: left 0.15s ease-out;
+}
+.timeline-handle:active {
+  cursor: grabbing;
+  opacity: 1;
+}
+.timeline-handle-grip {
+  display: flex;
+  gap: 4px;
+  pointer-events: none;
+}
+.timeline-handle-grip-line {
+  width: 3px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-full);
+}
+
+/* ── Campaign Step 2: Upload ── */
+.upload-zone {
+  border: 2px dashed var(--color-outline-variant);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3xl) var(--gutter);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--stack-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  background: var(--color-surface-container-lowest);
+  min-height: 260px;
+}
+.upload-zone:hover,
+.upload-zone.drag-over {
+  border-color: var(--color-charcoal);
+  background: var(--color-surface-container);
+}
+
+.upload-preview {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--stack-md);
+}
+.upload-preview.visible {
+  display: flex;
+}
+.upload-preview-image {
+  max-width: 300px;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: var(--radius-default);
+  border: 1px solid var(--color-outline-variant);
+}
+.upload-preview-info {
+  display: flex;
+  align-items: center;
+  gap: var(--stack-md);
+  padding: var(--stack-md);
+  background: var(--color-surface-container-high);
+  border-radius: var(--radius-default);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* ── Campaign Step 3: Payment ── */
+.checkout-layout {
+  display: flex;
+  gap: var(--margin-desktop);
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .checkout-layout {
+    flex-direction: column;
+  }
+}
+
+.checkout-content { flex: 1; max-width: 560px; }
+.checkout-visual {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 769px) {
+  .checkout-visual {
+    padding-left: var(--margin-desktop);
+    border-left: 1px solid rgba(196, 199, 199, 0.2);
+  }
+}
+
+.payment-placeholder {
+  background: var(--color-surface-container-highest);
+  border-radius: var(--radius-default);
+  padding: var(--stack-md);
+  border: 1px solid rgba(196, 199, 199, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  gap: var(--space-sm);
+}
+
+/* ── Dashboard ── */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+.dashboard-content {
+  flex: 1;
+  margin-left: 260px;
+  padding: var(--stack-lg) var(--margin-desktop);
+  max-width: 1200px;
+}
+@media (max-width: 768px) {
+  .dashboard-content {
+    margin-left: 0;
+    padding: var(--stack-lg) var(--margin-mobile);
+    padding-bottom: 100px;
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--stack-md);
+}
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.stat-card {
+  padding: var(--gutter);
+  background: var(--color-surface-container-lowest);
+  border-radius: var(--radius-default);
+  border: 1px solid var(--color-outline-variant);
+}
+.stat-card-label {
+  font-size: var(--text-label-sm);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-outline);
+  margin-bottom: var(--space-sm);
+}
+.stat-card-value {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  line-height: 1;
+}
+.stat-card-sub {
+  font-size: 12px;
+  color: var(--color-outline);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.campaign-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-md);
+}
+
+.campaign-card {
+  display: flex;
+  align-items: center;
+  gap: var(--gutter);
+  padding: var(--gutter);
+  background: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-default);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+.campaign-card:hover {
+  border-color: var(--color-outline);
+  box-shadow: var(--shadow-interactive);
+}
+@media (max-width: 640px) {
+  .campaign-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.activity-feed {
+  display: flex;
+  flex-direction: column;
+}
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--stack-md);
+  padding: var(--stack-md) 0;
+  border-bottom: 1px solid rgba(196, 199, 199, 0.2);
+}
+.activity-item:last-child {
+  border-bottom: none;
+}
+.activity-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-outline-variant);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+.activity-dot.active {
+  background: var(--color-success);
+}
+
+/* ── Help Page ── */
+.help-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 96px var(--margin-mobile) 64px;
+}
+@media (min-width: 768px) {
+  .help-container {
+    padding: 128px 0 64px;
+  }
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gutter);
+}
+@media (max-width: 640px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-card {
+  padding: var(--gutter);
+  background: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-default);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}

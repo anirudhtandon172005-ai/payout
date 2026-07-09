@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>PayOut - Landing Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Playfair+Display:ital,wght@1,700&amp;family=Caveat:wght@400;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#fff9ec",
+                        "surface-tint": "#5f5e5e",
+                        "secondary-fixed-dim": "#fbb6ab",
+                        "on-surface-variant": "#444748",
+                        "on-primary-container": "#858383",
+                        "inverse-surface": "#333027",
+                        "on-secondary-fixed": "#350f0b",
+                        "on-background": "#1e1c13",
+                        "secondary": "#855048",
+                        "secondary-fixed": "#ffdad5",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f6f0e2",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#e8e2d4",
+                        "surface-dim": "#dfdacc",
+                        "surface-container": "#f4eddf",
+                        "surface-container-high": "#eee8da",
+                        "tertiary": "#000000",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-surface": "#1e1c13",
+                        "primary-fixed": "#e5e2e1",
+                        "on-tertiary-container": "#838484",
+                        "primary": "#000000",
+                        "surface-container-low": "#f9f3e5",
+                        "on-secondary-container": "#7a463f",
+                        "surface-bright": "#fff9ec",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#1a1c1c",
+                        "secondary-container": "#feb8ae",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "surface": "#fff9ec",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "primary-container": "#1c1b1b",
+                        "inverse-primary": "#c8c6c5",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "outline-variant": "#c4c7c7",
+                        "surface-container-highest": "#e8e2d4",
+                        "on-secondary-fixed-variant": "#6a3932",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#747878",
+                        "on-primary-fixed-variant": "#474746",
+                        "tertiary-fixed": "#e3e2e2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "label-sm": ["Montserrat"],
+                        "display-wordmark": ["Playfair Display"],
+                        "body-md": ["Montserrat"],
+                        "accent-quote": ["Caveat"],
+                        "monospace": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "headline-lg": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "display-wordmark": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "accent-quote": ["28px", { "lineHeight": "1.2", "fontWeight": "400" }]
+                    },
+                    "animation": {
+                        "print-line": "printLine 0.5s ease-out forwards",
+                        "fade-in-up": "fadeInUp 0.8s ease-out forwards"
+                    },
+                    "keyframes": {
+                        "printLine": {
+                            "0%": { opacity: "0", transform: "translateY(10px)" },
+                            "100%": { opacity: "1", transform: "translateY(0)" }
+                        },
+                        "fadeInUp": {
+                            "0%": { opacity: "0", transform: "translateY(20px)" },
+                            "100%": { opacity: "1", transform: "translateY(0)" }
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #e9e3d5; /* Oat */
+            color: #1a1a1a; /* Charcoal */
+        }
+        .text-oxblood { color: #3b140f; }
+        .bg-oxblood { background-color: #3b140f; }
+        
+        .receipt-paper {
+            background-color: #fdfbf6;
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+        .receipt-paper::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background-size: 16px 16px;
+            background-image: radial-gradient(circle at 8px 8px, transparent 8px, #fdfbf6 9px);
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .animate-print-line, .animate-fade-in-up, .group:hover .group-hover\:scale-102 {
+                animation: none !important;
+                transition: none !important;
+                transform: none !important;
+                opacity: 1 !important;
+            }
+        }
+        
+        .print-delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .print-delay-2 { animation-delay: 0.4s; opacity: 0; }
+        .print-delay-3 { animation-delay: 0.6s; opacity: 0; }
+        .print-delay-4 { animation-delay: 0.8s; opacity: 0; }
+        .print-delay-5 { animation-delay: 1.0s; opacity: 0; }
+        .print-delay-6 { animation-delay: 1.2s; opacity: 0; }
+        
+        .btn-primary {
+            background-color: #a3a3a3;
+            color: #1a1a1a;
+            transition: all 0.2s ease-in-out;
+        }
+        .btn-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="antialiased font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-background text-primary font-body-md text-body-md relative w-full flex justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-md max-w-container-max mx-auto flat no shadows">
+<div class="flex items-center gap-2">
+<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdTc5egbzQ9IMRDyCeknptto_wi2QZslfa-3kBdo8LvFte5PcRKFu3jlyIPUYGUiviKLUWjO5n6zhCx9UAU_yyVihvJ0w9hQ1KHTnkrnc4b21UEAoDvMzEQcM5XvO1a7kFXi4xsMEq_EDRZtbxxpLYNEP00nDAMBgq3EigIeUbRoEH0ef1iONSlfclpTsxrKZanEvBrPflDq7HAfrcXejTL3T8Iyo4RTCSSpOc2purziPL5lwE-7g0D_Edfk9IseuWuJY" alt="PayOut Icon" class="w-[40px] h-[40px] object-contain">
+<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEFzFZWu01dbZcLsol5j1UOl_aQ0-UM1VZo8zFd-fx2kTPkUXBNKslsjpz8X4x1miU4CBiIG6jl-SaADZm8hVISjW56lE9D0b5eA5cHKDWJaGJe0ZF3l4uv4PqbRHkRFmx0e0E415wITq2r0TEehylb3YQ3YZNcXu1QwQ8HJ1HiPlQBcSefv22NkoiqWhabU66ZqomqCmfNXtJd5sM1KTf4baGKWNXZkfRCsnWPlvDgD0rNkc-tqUwXyNl_-Sg4BPiwPo" alt="PayOut" class="h-10 w-auto object-contain">
+</div>
+<div class="flex items-center gap-6">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200 hidden md:block" href="#">Help</a>
+<a class="text-primary font-bold hover:text-primary transition-colors duration-200 scale-102 transition-transform" href="#">Log in</a>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-32">
+<!-- Hero Section -->
+<section class="py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1 flex flex-col items-start gap-8 animate-fade-in-up">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">FOR RESTAURANTS, BRANDS &amp; LOCAL BUSINESS</span>
+<div class="relative">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary">Every ad here pays someone real.</h1>
+<span class="font-accent-quote text-accent-quote text-secondary absolute -bottom-8 right-0 transform rotate-[-5deg]">everybody wins.</span>
+</div>
+<a class="btn-primary rounded-full px-8 py-4 font-bold tracking-wide text-sm mt-4 inline-block" href="#">LIST YOUR BUSINESS</a>
+</div>
+<div class="order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-in-up" style="animation-delay: 0.2s;">
+<div class="receipt-paper p-8 w-full max-w-[340px] transform rotate-3">
+<div class="text-center mb-6 pb-4 border-b-2 border-dashed border-outline-variant">
+<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQqnGTEM8a9918oGQpSF3y3eeINkoULEYdYQndkkC4XyvPNPxaqqQAW5j1ECeHOY8v6FP3uxmV3drgSZW54oNlUchK79FW99mn8dkMyCoq-wV8dhLY9_qnHfgwMtz7jjBhoIGOvA0gTuD5y8WzjdvmJ1GYzD-VkoEohWxaHPhqoL42ZiJBi6nxN9IqPkLCClx6vHi1TIBqicUXlrq5Z5Ou6ghDuL54LFcdsqc8uNe1C2DhEbjDPMaTA0_Rb2n1cMGADIA" alt="PayOut Icon" class="h-10 w-auto mx-auto mb-2 object-contain">
+<div class="flex justify-center mb-2"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfOcy6tnjfzoNUxuExGfz2K39TPhvyzUv84w1c0kYsVdWkppk_V50Seq-CW4wB06ZMHRXpjnWVHGR5ebmrgSNKPsiGMgJ9CvX1lmB3428BJizL-A5onW-plqIVzmAhYuBe8gCsDQ2gtSM2caxRb9Qmy7kJ55HFT20g0vVE2Jo0Q95dliW4_cWMPd7XobQN3FSNruBsNALC-g_oUHjBFjz4q-xD3nKTa-nIalaEqYG-8HrAPvnJBbPgWhyuECEm4nuU9ns" alt="PayOut Logo" class="w-[140px] h-auto object-contain"></div>
+<p class="font-monospace text-[13px] text-on-surface-variant mt-1">RECEIPT NO. 00892</p>
+</div>
+<div class="font-monospace text-[14px] flex flex-col gap-3">
+<div class="flex justify-between animate-print-line print-delay-1">
+<span class="">1 AD VIEW</span>
+<span class="">$0.15</span>
+</div>
+<div class="flex justify-between text-secondary animate-print-line print-delay-2">
+<span class="">DISCOUNT APPLIED</span>
+<span class="">-$0.05</span>
+</div>
+<div class="flex justify-between animate-print-line print-delay-3">
+<span class="">RIDER BONUS</span>
+<span class="">$0.08</span>
+</div>
+<div class="flex justify-between animate-print-line print-delay-4 pb-4 border-b border-dashed border-outline-variant">
+<span class="">PLATFORM FEE</span>
+<span class="">$0.02</span>
+</div>
+<div class="flex justify-between font-bold text-[16px] pt-2 animate-print-line print-delay-5">
+<span class="">TOTAL DISTRIBUTED</span>
+<span class="">$0.30</span>
+</div>
+</div>
+<div class="mt-8 text-center animate-print-line print-delay-6">
+<p class="font-monospace text-[12px] text-on-surface-variant">THANK YOU FOR PARTICIPATING</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-24 text-center flex flex-col items-center gap-8 relative border-t border-outline-variant/30 mt-16">
+<span class="font-accent-quote text-accent-quote text-secondary absolute top-12 transform -rotate-3 ml-48">ready when you are.</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary max-w-2xl mt-4">List your business in two minutes.</h2>
+<a class="btn-primary rounded-full px-10 py-4 font-bold tracking-wide text-sm mt-4" href="#">LIST YOUR BUSINESS</a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background text-primary font-body-md text-body-md w-full border-t border-outline-variant flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-lg max-w-container-max mx-auto flat no shadows">
+<div class="flex items-center gap-2 mb-6 md:mb-0 opacity-80 hover:opacity-100 transition-opacity">
+<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBacyVLqC7P8LVWD1O4uXEf8VgwVZaCDLIlMceNrJhFmznnR2cnnSqm_hfDgZX22SLk8Ofv_Cjdln7e6HVx0OVGHPq47GgnP7KLNJq9mYF41wHngQFvhnoC4ZalqSTm6kIe-F22IohXQT6UOJRFkTPQaLkEWLijCOEFQHm7mcYcpKbc0ZCFqmYNNoqLwkoY-wQutCCNd1qsrWrNHlhO4DO7B_n6JPzl2nl1_1vTcIjFKUESf5SGIQKNjadSBw0TIFd0q3w" alt="PayOut Icon" class="h-8 w-auto object-contain">
+<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkqGXpjZ9Cip3i0RgY7NZwu2Xpxda9qaWCrT8qRONsn_iimG-50qsJZ-h3zIJNO5tBRc-C9_WlNb4hW3BoJI_nEupzmXHl9K3Au-LGWamNlMuTl-5Z0LtqLepFbpKjhF1thwlaw4g88N0Uhj6ufRk03QEh8ccSPBT2YZDKkH-p0MOSwYoootKSGPgV0r8Y64UQfJoLLqYJP3aMPVJYpVuxswplp35M3uwQcGzK_Fr8gQX7xA30DWF1JGEPyKFFymWD35Q" alt="PayOut" class="h-8 w-auto object-contain">
+</div>
+<div class="flex gap-6 mb-6 md:mb-0">
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Help</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Terms</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Privacy</a>
+</div>
+<p class="text-on-surface-variant text-sm text-center md:text-right">© 2024 PayOut. All rights reserved.</p>
+</footer>
+
+
+</body></html>

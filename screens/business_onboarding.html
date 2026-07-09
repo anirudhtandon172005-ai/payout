@@ -1,0 +1,304 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>PayOut - Business Onboarding</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Playfair+Display:wght@700&amp;family=Caveat:wght@400;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed-variant": "#464747",
+                      "on-error": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed-dim": "#c7c6c6",
+                      "primary": "#000000",
+                      "on-primary": "#ffffff",
+                      "background": "#fff9ec",
+                      "surface-dim": "#dfdacc",
+                      "surface-container": "#f4eddf",
+                      "surface-bright": "#fff9ec",
+                      "inverse-surface": "#333027",
+                      "secondary-fixed-dim": "#fbb6ab",
+                      "on-secondary-fixed-variant": "#6a3932",
+                      "inverse-primary": "#c8c6c5",
+                      "surface-container-low": "#f9f3e5",
+                      "primary-container": "#1c1b1b",
+                      "secondary": "#855048",
+                      "on-primary-container": "#858383",
+                      "tertiary-container": "#1a1c1c",
+                      "surface-variant": "#e8e2d4",
+                      "on-secondary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "secondary-fixed": "#ffdad5",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "on-tertiary": "#ffffff",
+                      "inverse-on-surface": "#f6f0e2",
+                      "error-container": "#ffdad6",
+                      "on-secondary-container": "#7a463f",
+                      "surface-tint": "#5f5e5e",
+                      "outline": "#747878",
+                      "surface": "#fff9ec",
+                      "outline-variant": "#c4c7c7",
+                      "on-primary-fixed-variant": "#474746",
+                      "tertiary": "#000000",
+                      "primary-fixed": "#e5e2e1",
+                      "secondary-container": "#feb8ae",
+                      "on-primary-fixed": "#1c1b1b",
+                      "surface-container-high": "#eee8da",
+                      "on-tertiary-container": "#838484",
+                      "surface-container-highest": "#e8e2d4",
+                      "surface-container-lowest": "#ffffff",
+                      "on-background": "#1e1c13",
+                      "tertiary-fixed": "#e3e2e2",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "on-secondary-fixed": "#350f0b",
+                      "on-surface-variant": "#444748",
+                      "on-surface": "#1e1c13"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "64px",
+                      "stack-md": "16px",
+                      "stack-lg": "32px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px",
+                      "stack-sm": "8px",
+                      "container-max": "1200px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Montserrat"
+                      ],
+                      "label-sm": [
+                              "Montserrat"
+                      ],
+                      "headline-lg": [
+                              "Montserrat"
+                      ],
+                      "accent-quote": [
+                              "Caveat"
+                      ],
+                      "display-wordmark": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "Montserrat"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "accent-quote": [
+                              "18px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-wordmark": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #e9e3d5; /* Matched from prompt */
+        }
+        
+        /* Input underline styling as per design guidelines */
+        .input-line {
+            border-bottom: 1px solid #c4c7c7; /* outline-variant approximation for gray-400 */
+            transition: border-bottom-color 0.2s ease-in-out, border-bottom-width 0.2s ease-in-out;
+        }
+        .input-line:focus-within {
+            border-bottom: 2px solid #1e1c13; /* on-background approximation for Charcoal */
+            outline: none;
+        }
+        
+        .fade-transition {
+            transition: opacity 0.4s ease-in-out;
+        }
+        
+        .hide {
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+        }
+        .show {
+            opacity: 1;
+            position: relative;
+        }
+
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center font-body-md text-on-background relative overflow-x-hidden">
+<!-- Fixed Top Left Icon -->
+<div class="fixed top-gutter left-gutter md:top-margin-desktop md:left-margin-desktop z-50">
+<img alt="PayOut Icon" class="h-10 md:h-12 w-auto object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLSrhGKZdJkzsLZa8xmWoez2L-jwYRNhQ99ZKHdA1kbghoVbPc2pRbkadE9O0ubeimKV38pl-XSjAqi8Q6OZgY8GFuvwI6UTMsMTFNcgx0Q9FiEcLqnjkWpPbPU4uD7KZybGmHMn2KFzXK_F4B_yd5xF344QmkbeAgAfiL0VJNVfB86dgWqk3tukrj9zlTvBU4UDZ-IkRWe8Hj31RoKMuJA31eNJiJJ4_wgg2KXOlgOVA2rMJ-Gae_mwuQrLqJkFsCxxM">
+</div>
+<!-- Main Container -->
+<main class="w-full max-w-[480px] px-margin-mobile relative w-full h-full min-h-screen flex flex-col justify-center py-stack-lg">
+<!-- Onboarding Form State -->
+<div class="w-full fade-transition show flex flex-col gap-stack-lg" id="onboarding-state">
+<!-- Header Section -->
+<header class="flex flex-col gap-stack-sm mb-stack-md">
+<div class="w-6 h-[2px] bg-outline mb-2 rounded-full"></div>
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-widest">STEP 1 OF 1 — SETUP</p>
+<h1 class="font-headline-lg text-headline-lg md:text-[32px] md:leading-[40px] text-on-background">Tell us about your business</h1>
+</header>
+<!-- Form -->
+<form class="flex flex-col gap-stack-lg" id="onboarding-form" onsubmit="event.preventDefault(); submitForm();">
+<!-- Business Name -->
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm uppercase text-outline" for="business-name">BUSINESS NAME</label>
+<input class="input-line bg-transparent w-full py-2 text-on-background font-body-md font-bold focus:outline-none focus:ring-0 px-0" id="business-name" placeholder="e.g. Acme Corp" required="" type="text">
+</div>
+<!-- Category -->
+<div class="flex flex-col gap-2 relative">
+<label class="font-label-sm text-label-sm uppercase text-outline" for="category">CATEGORY</label>
+<select class="input-line bg-transparent w-full py-2 text-on-background font-body-md font-bold focus:outline-none focus:ring-0 px-0 appearance-none cursor-pointer" id="category" required="">
+<option disabled="" selected="" value="">Select category...</option>
+<option value="restaurant">Restaurant</option>
+<option value="retail">Retail</option>
+<option value="brand">Brand</option>
+<option value="service">Service</option>
+<option value="other">Other</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pt-6">
+<span class="material-symbols-outlined text-outline">expand_more</span>
+</div>
+</div>
+<!-- GSTIN OR PAN -->
+<div class="flex flex-col gap-2 relative">
+<label class="font-label-sm text-label-sm uppercase text-outline" for="tax-id">GSTIN OR PAN</label>
+<input class="input-line bg-transparent w-full py-2 text-on-background font-body-md font-bold focus:outline-none focus:ring-0 px-0 uppercase" id="tax-id" placeholder="Enter ID" required="" type="text">
+<p class="text-[12px] text-error mt-1 hidden transition-opacity opacity-0 font-medium" id="tax-error">That doesn't match a GSTIN or PAN format. Double check and try again.</p>
+</div>
+<!-- Primary Contact Number -->
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm uppercase text-outline" for="phone">PRIMARY CONTACT NUMBER</label>
+<div class="flex items-center input-line focus-within:border-on-background focus-within:border-b-2 transition-all">
+<span class="text-on-background font-body-md font-bold pr-2 py-2 select-none">+91</span>
+<input class="bg-transparent w-full py-2 text-on-background font-body-md font-bold focus:outline-none focus:ring-0 px-0 border-none" id="phone" placeholder="98765 43210" required="" type="tel">
+</div>
+</div>
+<!-- Divider -->
+<div class="w-full h-px bg-outline-variant my-stack-sm opacity-50"></div>
+<!-- Submit Button -->
+<button class="w-full py-4 rounded-full bg-[#a3a3a3] text-[#1a1a1a] shadow-md hover:shadow-lg hover:bg-[#909090] hover:scale-[1.02] transition-all duration-200 font-label-sm text-label-sm uppercase flex items-center justify-center gap-2" type="submit">
+                    SUBMIT FOR VERIFICATION
+                </button>
+</form>
+<!-- Footer -->
+<footer class="mt-stack-sm text-center">
+<p class="font-body-md text-[14px] leading-relaxed text-outline">Verification typically takes under 24 hours.<br>You'll be notified by email.</p>
+</footer>
+</div>
+<!-- Success/Milestone State (Hidden initially) -->
+<div class="w-full fade-transition hide flex flex-col items-center justify-center text-center gap-stack-lg absolute inset-0 px-margin-mobile" id="success-state">
+<div class="flex flex-col items-center gap-4">
+<img alt="PayOut Wordmark" class="w-48 md:w-64 h-auto object-contain mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQcXy0CLHyh6-MvXK2IihbDE7DLlFJPBWiwoaie3ZIvXKIOK3POJMc9z4RutBnXnS4wKfdzlcMPcch4zI2bPspW0f3xB0_uFZxxqUx3GnbhQXUM1-ZbybrZFuztaGzq8W_1v91EQJ8NvkfexWNC5UKZli7ILmIN0A6OrABivS1tUDPOfEAfYaouf9ehdcPnCEygbm3ruNSpqxYxrUu7_4GaBlkArw0aP2EZPlmTzS3my0FK5RNV2TtyucysYSLBrtuOhY">
+<h2 class="font-accent-quote text-[32px] md:text-[40px] text-on-background leading-tight tracking-tight">Reserved.</h2>
+<p class="font-body-md text-body-md text-outline max-w-sm mx-auto mt-4">Your business details have been securely submitted. Our team will review and verify your account shortly.</p>
+</div>
+<button class="mt-stack-lg px-8 py-3 rounded-full border border-outline text-on-background hover:bg-surface-variant transition-colors duration-200 font-label-sm text-label-sm uppercase tracking-widest" onclick="location.reload()">
+                Back to home
+            </button>
+</div>
+</main>
+<script>
+        // Simple mock validation for GSTIN/PAN on blur
+        const taxInput = document.getElementById('tax-id');
+        const taxError = document.getElementById('tax-error');
+
+        taxInput.addEventListener('blur', function() {
+            const val = this.value.trim().toUpperCase();
+            // Extremely basic regex for dummy validation: 
+            // PAN: 5 chars, 4 nums, 1 char (10 len)
+            // GSTIN: 2 nums, 10 PAN, 1 num/char, Z, 1 num/char (15 len)
+            const isPan = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(val);
+            const isGstin = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/.test(val);
+            
+            if (val.length > 0 && !isPan && !isGstin) {
+                taxError.classList.remove('hidden');
+                // trigger reflow for transition
+                void taxError.offsetWidth;
+                taxError.classList.remove('opacity-0');
+                taxInput.classList.add('border-error');
+            } else {
+                taxError.classList.add('opacity-0');
+                setTimeout(() => taxError.classList.add('hidden'), 200);
+                taxInput.classList.remove('border-error');
+            }
+        });
+
+        // Form submission crossfade
+        function submitForm() {
+            // Check validation before submit
+            if(taxError.classList.contains('hidden') || taxError.classList.contains('opacity-0')) {
+                const onboardingState = document.getElementById('onboarding-state');
+                const successState = document.getElementById('success-state');
+
+                onboardingState.classList.remove('show');
+                onboardingState.classList.add('hide');
+
+                setTimeout(() => {
+                    successState.classList.remove('hide');
+                    successState.classList.add('show');
+                }, 400); // match transition duration
+            } else {
+                taxInput.focus();
+            }
+        }
+    </script>
+</body></html>

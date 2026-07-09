@@ -1,0 +1,401 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:wght@700&amp;family=Caveat&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed-variant": "#464747",
+                        "on-background": "#1e1c13",
+                        "secondary-container": "#feb8ae",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#858383",
+                        "on-primary-fixed": "#1c1b1b",
+                        "tertiary": "#000000",
+                        "inverse-surface": "#333027",
+                        "primary": "#000000",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e3e2e2",
+                        "surface-container-low": "#f9f3e5",
+                        "outline": "#747878",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "surface-tint": "#5f5e5e",
+                        "on-secondary-fixed-variant": "#6a3932",
+                        "surface-container-high": "#eee8da",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface": "#fff9ec",
+                        "inverse-on-surface": "#f6f0e2",
+                        "primary-fixed": "#e5e2e1",
+                        "secondary-fixed-dim": "#fbb6ab",
+                        "primary-container": "#1c1b1b",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "background": "#e9e3d5", /* Overridden per spec */
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#7a463f",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#ffdad5",
+                        "on-surface": "#1a1a1a", /* Overridden per spec */
+                        "inverse-primary": "#c8c6c5",
+                        "tertiary-container": "#1a1c1c",
+                        "surface-container-highest": "#e8e2d4",
+                        "on-secondary-fixed": "#350f0b",
+                        "on-primary-fixed-variant": "#474746",
+                        "secondary": "#855048",
+                        "outline-variant": "#c4c7c7",
+                        "surface-variant": "#e8e2d4",
+                        "surface-bright": "#fff9ec",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#f4eddf",
+                        "on-tertiary-container": "#838484",
+                        "surface-dim": "#dfdacc",
+                        "on-surface-variant": "#444748"
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        lg: "2rem",
+                        xl: "3rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "margin-desktop": "64px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "container-max": "1200px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Montserrat"],
+                        "display-wordmark": ["Playfair Display"],
+                        "label-sm": ["Montserrat"],
+                        "body-md": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "accent-quote": ["Caveat"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "display-wordmark": ["32px", { lineHeight: "1.2", fontWeight: "700" }],
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+                        "headline-lg-mobile": ["20px", { lineHeight: "28px", fontWeight: "700" }],
+                        "accent-quote": ["18px", { lineHeight: "20px", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    }catch(_e){}</script></head><body class="min-h-screen flex flex-col">
+<!-- Fixed Logo Anchor -->
+<div class="fixed top-6 left-6 z-50">
+<img alt="PayOut Logo Mark" class="h-8 w-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDolG1LwiLwrEWNjZqhNDkfPL-gAGx89usVpleCY3Bj0-h37W_9ldWBePjC7vHIbMg7-Cp-zE9q0OUPMVVOnh0mMhpgkcaLQoQGB33qTU77vvpa3m9nCNHQX17m7k0YCbxVCdhp_FDAfxJ-Um0LqmLOW-cvJ8lqhPvIOlh54Oj9NvTel-pcFQ2hUn6Jq27MA8wakfKOTinB2-SSJWrX_TycRI7BvKqz_tm28_bcjiBYZknOnwFiZCwE0fin9dTrpbvpEFs">
+</div>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-3xl mx-auto px-margin-mobile md:px-0 py-24 md:py-32 flex flex-col gap-stack-lg">
+<!-- Header Section -->
+<header class="flex flex-col gap-stack-sm">
+<span class="font-label-sm text-label-sm text-outline tracking-widest uppercase">Step 1 of 3 — Campaign Setup</span>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Where should this campaign run?</h1>
+</header>
+<!-- Scope Selection -->
+<section aria-labelledby="scope-label" class="flex flex-col gap-stack-md" role="radiogroup">
+<h2 class="sr-only" id="scope-label">Scope Selection</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Local Card -->
+<label class="group relative flex flex-col gap-2 p-6 rounded-2xl border-2 border-transparent hover:border-outline-variant bg-surface-container-highest cursor-pointer transition-all duration-120 has-[:checked]:border-on-surface has-[:checked]:bg-surface-dim">
+<div class="flex items-start justify-between">
+<span class="font-body-md text-body-md text-on-surface">Local</span>
+<input checked="" class="custom-radio mt-1" name="scope" onchange="toggleScope('local')" type="radio" value="local">
+</div>
+<p class="text-sm text-on-surface-variant font-medium">Reach people near a specific location</p>
+</label>
+<!-- National Card -->
+<label class="group relative flex flex-col gap-2 p-6 rounded-2xl border-2 border-transparent hover:border-outline-variant bg-surface-container-highest cursor-pointer transition-all duration-120 has-[:checked]:border-on-surface has-[:checked]:bg-surface-dim">
+<div class="flex items-start justify-between">
+<span class="font-body-md text-body-md text-on-surface">National</span>
+<input class="custom-radio mt-1" name="scope" onchange="toggleScope('national')" type="radio" value="national">
+</div>
+<p class="text-sm text-on-surface-variant font-medium">Reach people across the country</p>
+</label>
+</div>
+</section>
+<!-- Conditional Detail Section -->
+<section class="relative min-h-[300px]">
+<!-- Local Details -->
+<div class="transition-height max-h-[500px] opacity-100 flex flex-col gap-stack-md absolute top-0 left-0 w-full" id="local-details">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-widest">Set Your Location</label>
+<!-- Map Placeholder -->
+<div class="relative w-full h-48 rounded-2xl overflow-hidden bg-surface-container-high border border-outline-variant group">
+<img class="w-full h-full object-cover opacity-60 mix-blend-multiply" data-alt="A minimalist UI map placeholder showing a simplified street layout in soft oat and gray tones with a sharp black pin marker indicating a specific location." data-location="City Center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgqA2EuqB1VbJpEJ89aN8O_VNUdDsczTQj48CFtLrKrDeL49CGCN7tdqINWwCXAQ24CsXkcBRhMLhAiy5_z-SSz53oz7UTGd-k0ATXOjq8SICu6YvEnAzvuTb0lInGee-Ye7_DpjGxieggAExdqxOEEbcJAqmypxNwA4QujVRlHPiW5jckXe4u2tturzaNij_i8tbuwF9CTYJgGj2SZ5Gr8dtyeTz_uhZTN3mCmuLzrJ3IcFbmdKctPA">
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-on-surface drop-shadow-md">location_on</span>
+</div>
+<!-- Fake Search Input Overlay -->
+<div class="absolute top-4 left-4 right-4 bg-surface-container-lowest/80 backdrop-blur-sm rounded-full px-4 py-2 flex items-center border border-outline-variant focus-within:border-on-surface transition-colors">
+<span class="material-symbols-outlined text-outline mr-2 text-sm">search</span>
+<input class="bg-transparent border-none outline-none text-sm font-medium w-full text-on-surface placeholder:text-outline" placeholder="Search location..." type="text" value="Downtown Business District">
+</div>
+</div>
+<!-- Fixed Radius Info -->
+<div class="mt-2">
+<p class="font-sans text-sm text-gray-600">Your campaign covers a 20 km radius around this point.</p>
+</div>
+</div>
+<!-- National Details -->
+<div class="transition-height max-h-0 opacity-0 pointer-events-none flex flex-col gap-stack-md absolute top-0 left-0 w-full" id="national-details">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-widest">Reach Tier</label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-gutter" role="radiogroup">
+<label class="p-4 rounded-xl border border-outline-variant bg-transparent cursor-pointer hover:bg-surface-container-highest transition-colors flex items-center gap-3 has-[:checked]:border-on-surface has-[:checked]:bg-surface-dim">
+<input class="custom-radio" name="tier" type="radio" value="metro">
+<span class="font-body-md text-sm font-semibold">Metro Cities</span>
+</label>
+<label class="p-4 rounded-xl border border-outline-variant bg-transparent cursor-pointer hover:bg-surface-container-highest transition-colors flex items-center gap-3 has-[:checked]:border-on-surface has-[:checked]:bg-surface-dim">
+<input checked="" class="custom-radio" name="tier" type="radio" value="tier12">
+<span class="font-body-md text-sm font-semibold">Tier 1 + 2</span>
+</label>
+<label class="p-4 rounded-xl border border-outline-variant bg-transparent cursor-pointer hover:bg-surface-container-highest transition-colors flex items-center gap-3 has-[:checked]:border-on-surface has-[:checked]:bg-surface-dim">
+<input class="custom-radio" name="tier" type="radio" value="panindia">
+<span class="font-body-md text-sm font-semibold">Pan-India</span>
+</label>
+</div>
+</div>
+</section>
+<hr class="border-t border-outline-variant/30 my-4">
+<!-- Duration Section -->
+<section class="flex flex-col gap-stack-md">
+<h2 class="font-label-sm text-label-sm text-outline uppercase tracking-widest">HOW LONG SHOULD THIS SLOT RUN?</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter" role="radiogroup">
+<!-- 3 Hours -->
+<label class="group relative flex flex-col gap-2 p-6 rounded-2xl border-2 border-transparent hover:border-outline-variant bg-surface-container-highest cursor-pointer transition-all duration-200 has-[:checked]:border-[#4a4a4a] has-[:checked]:bg-[#dfdacc]">
+<div class="flex items-start justify-between">
+<span class="font-body-md text-body-md text-on-surface">3 HOURS</span>
+<input checked="" class="custom-radio mt-1" name="duration" onchange="updateDuration(3)" type="radio" value="3">
+</div>
+<p class="text-sm text-on-surface-variant font-medium">Shorter window, tighter reach</p>
+</label>
+<!-- 5 Hours -->
+<label class="group relative flex flex-col gap-2 p-6 rounded-2xl border-2 border-transparent hover:border-outline-variant bg-surface-container-highest cursor-pointer transition-all duration-200 has-[:checked]:border-[#4a4a4a] has-[:checked]:bg-[#dfdacc]">
+<div class="flex items-start justify-between">
+<span class="font-body-md text-body-md text-on-surface">5 HOURS</span>
+<input class="custom-radio mt-1" name="duration" onchange="updateDuration(5)" type="radio" value="5">
+</div>
+<p class="text-sm text-on-surface-variant font-medium">Longer window, broader reach</p>
+</label>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="flex flex-col gap-stack-md mt-4">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Choose your time block</h2>
+<div class="relative w-full mt-4 h-16 rounded-xl border border-outline-variant overflow-hidden" id="timeline-container">
+<!-- Track -->
+<div class="absolute inset-0 timeline-track"></div>
+<!-- Draggable Handle -->
+<div aria-label="Timeline selection block. Use arrow keys to move." aria-valuemax="48" aria-valuemin="0" aria-valuenow="22" class="absolute h-full bg-[#1a1a1a] rounded-lg cursor-grab active:cursor-grabbing focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#e9e3d5] focus:ring-[#1a1a1a] transition-all duration-200" id="timeline-handle" role="slider" style="left: 45.83%; width: 12.5%; opacity: 0.85" tabindex="0">
+<div class="w-full h-full flex items-center justify-center pointer-events-none">
+<div class="w-1 h-6 bg-white/50 rounded-full mx-1"></div>
+<div class="w-1 h-6 bg-white/50 rounded-full mx-1"></div>
+</div>
+</div>
+</div>
+<!-- Readout -->
+<div aria-live="polite" class="mt-4 flex justify-center">
+<p class="font-mono text-lg font-semibold text-on-surface" id="time-readout">Selected window: 5:00 PM – 8:00 PM</p>
+</div>
+</section>
+<!-- Price Display-->
+<section aria-live="polite" class="mt-8 pt-8 border-t border-outline-variant/30 fade-in opacity-0" id="price-section">
+<div class="flex flex-col items-center text-center gap-2">
+<h2 class="font-label-sm text-label-sm text-outline uppercase tracking-widest">YOUR PRICE</h2>
+<p class="font-mono text-4xl font-bold text-on-surface" id="price-display">₹ 4,200</p>
+<p class="font-sans text-sm text-gray-600 mt-2">Based on expected reach during this window.</p>
+</div>
+</section>
+<!-- Footer Actions -->
+<footer class="mt-12 flex flex-col-reverse sm:flex-row justify-end gap-4 pt-6">
+<button class="bg-transparent border-2 border-[#1a1a1a] text-[#1a1a1a] font-body-md font-semibold px-8 py-3 rounded-full transition-all hover:bg-black/5">
+                SAVE FOR LATER
+            </button>
+<button class="bg-[#a3a3a3] hover:bg-[#8f8f8f] text-[#1a1a1a] font-body-md font-semibold px-8 py-3 rounded-full shadow-md transition-all hover:scale-[1.02] flex items-center justify-center gap-2">
+                CONTINUE
+                <span class="material-symbols-outlined text-sm font-bold">arrow_forward</span>
+</button>
+</footer>
+</main>
+<script>
+        // Scope Toggle
+        function toggleScope(scope) {
+            const localDetails = document.getElementById('local-details');
+            const nationalDetails = document.getElementById('national-details');
+            
+            if (scope === 'local') {
+                localDetails.style.maxHeight = '500px';
+                localDetails.style.opacity = '1';
+                localDetails.style.pointerEvents = 'auto';
+                
+                nationalDetails.style.maxHeight = '0';
+                nationalDetails.style.opacity = '0';
+                nationalDetails.style.pointerEvents = 'none';
+            } else {
+                localDetails.style.maxHeight = '0';
+                localDetails.style.opacity = '0';
+                localDetails.style.pointerEvents = 'none';
+                
+                nationalDetails.style.maxHeight = '500px';
+                nationalDetails.style.opacity = '1';
+                nationalDetails.style.pointerEvents = 'auto';
+            }
+        }
+
+        // Timeline Logic
+        const timelineContainer = document.getElementById('timeline-container');
+        const handle = document.getElementById('timeline-handle');
+        const timeReadout = document.getElementById('time-readout');
+        const priceSection = document.getElementById('price-section');
+        const priceDisplay = document.getElementById('price-display');
+        
+        let durationHours = 3; // 3 or 5
+        let currentStep = 22; // 0 to 48 (30 min increments starting at 6AM)
+        const totalSteps = 48;
+
+        function updateDuration(hours) {
+            durationHours = hours;
+            const widthPercentage = (durationHours / 24) * 100;
+            handle.style.width = `${widthPercentage}%`;
+            
+            // Adjust current step if it exceeds bounds with new width
+            const maxStep = totalSteps - (durationHours * 2);
+            if (currentStep > maxStep) {
+                currentStep = maxStep;
+            }
+            updateHandlePosition();
+            updateReadout();
+            updatePrice();
+        }
+
+        function getFormattedTime(stepIndex) {
+            let hour = 6 + Math.floor(stepIndex / 2);
+            let mins = (stepIndex % 2 === 0) ? '00' : '30';
+            
+            let period = 'AM';
+            if (hour >= 24) {
+                hour -= 24;
+                period = 'AM'; // Next day AM
+            } else if (hour >= 12) {
+                period = 'PM';
+                if (hour > 12) hour -= 12;
+            }
+            if (hour === 0) hour = 12;
+
+            return `${hour}:${mins} ${period}`;
+        }
+
+        function updateReadout() {
+            const startTime = getFormattedTime(currentStep);
+            const endTime = getFormattedTime(currentStep + (durationHours * 2));
+            timeReadout.innerText = `Selected window: ${startTime} – ${endTime}`;
+            handle.setAttribute('aria-valuenow', currentStep);
+        }
+
+        function updateHandlePosition() {
+            const percentage = (currentStep / totalSteps) * 100;
+            handle.style.left = `${percentage}%`;
+        }
+
+        function updatePrice() {
+            // Mock price calculation based on duration and time of day
+            let baseRate = durationHours === 3 ? 3000 : 4500;
+            // Add some variation based on time (e.g. evening is more expensive)
+            if (currentStep > 20 && currentStep < 36) { // roughly 4pm-12am
+                baseRate += 1200;
+            }
+            
+            priceDisplay.innerText = `₹ ${baseRate.toLocaleString()}`;
+            
+            // Fade in price section
+            priceSection.classList.remove('opacity-0');
+            priceSection.classList.add('opacity-100');
+        }
+
+        // Drag functionality
+        let isDragging = false;
+        let startX, startLeft;
+
+        handle.addEventListener('mousedown', startDrag);
+        handle.addEventListener('touchstart', (e) => startDrag(e.touches[0]));
+
+        function startDrag(e) {
+            isDragging = true;
+            startX = e.clientX;
+            const rect = timelineContainer.getBoundingClientRect();
+            startLeft = handle.getBoundingClientRect().left - rect.left;
+            
+            document.addEventListener('mousemove', onDrag);
+            document.addEventListener('mouseup', endDrag);
+            document.addEventListener('touchmove', (e) => onDrag(e.touches[0]));
+            document.addEventListener('touchend', endDrag);
+        }
+
+        function onDrag(e) {
+            if (!isDragging) return;
+            
+            const dx = e.clientX - startX;
+            const rect = timelineContainer.getBoundingClientRect();
+            let newLeft = startLeft + dx;
+            
+            // Constrain
+            const maxLeft = rect.width - handle.offsetWidth;
+            if (newLeft < 0) newLeft = 0;
+            if (newLeft > maxLeft) newLeft = maxLeft;
+            
+            // Calculate nearest step
+            const percentage = newLeft / rect.width;
+            const maxStep = totalSteps - (durationHours * 2);
+            let targetStep = Math.round(percentage * totalSteps);
+            if (targetStep > maxStep) targetStep = maxStep;
+            
+            if (targetStep !== currentStep) {
+                currentStep = targetStep;
+                updateHandlePosition();
+                updateReadout();
+            }
+        }
+
+        function endDrag() {
+            isDragging = false;
+            document.removeEventListener('mousemove', onDrag);
+            document.removeEventListener('mouseup', endDrag);
+            document.removeEventListener('touchmove', onDrag);
+            document.removeEventListener('touchend', endDrag);
+            updatePrice();
+        }
+
+        // Keyboard functionality
+        handle.addEventListener('keydown', (e) => {
+            const maxStep = totalSteps - (durationHours * 2);
+            if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (currentStep < maxStep) {
+                    currentStep++;
+                    updateHandlePosition();
+                    updateReadout();
+                    updatePrice();
+                }
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (currentStep > 0) {
+                    currentStep--;
+                    updateHandlePosition();
+                    updateReadout();
+                    updatePrice();
+                }
+            }
+        });
+
+        // Initialize
+        updateReadout();
+        // Delay price fade in slightly on load
+        setTimeout(updatePrice, 100);
+    </script>
+</body></html>

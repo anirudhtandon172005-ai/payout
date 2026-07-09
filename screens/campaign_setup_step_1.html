@@ -1,0 +1,438 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>PayOut - Campaign Setup</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Playfair+Display:wght@700&amp;family=Caveat&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed-variant": "#464747",
+                        "on-background": "#1e1c13",
+                        "secondary-container": "#feb8ae",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#858383",
+                        "on-primary-fixed": "#1c1b1b",
+                        "tertiary": "#000000",
+                        "inverse-surface": "#333027",
+                        "primary": "#000000",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e3e2e2",
+                        "surface-container-low": "#f9f3e5",
+                        "outline": "#747878",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "surface-tint": "#5f5e5e",
+                        "on-secondary-fixed-variant": "#6a3932",
+                        "surface-container-high": "#eee8da",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface": "#fff9ec",
+                        "inverse-on-surface": "#f6f0e2",
+                        "primary-fixed": "#e5e2e1",
+                        "secondary-fixed-dim": "#fbb6ab",
+                        "primary-container": "#1c1b1b",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "background": "#e9e3d5", /* Overridden per spec */
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#7a463f",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#ffdad5",
+                        "on-surface": "#1a1a1a", /* Overridden per spec */
+                        "inverse-primary": "#c8c6c5",
+                        "tertiary-container": "#1a1c1c",
+                        "surface-container-highest": "#e8e2d4",
+                        "on-secondary-fixed": "#350f0b",
+                        "on-primary-fixed-variant": "#474746",
+                        "secondary": "#855048",
+                        "outline-variant": "#c4c7c7",
+                        "surface-variant": "#e8e2d4",
+                        "surface-bright": "#fff9ec",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#f4eddf",
+                        "on-tertiary-container": "#838484",
+                        "surface-dim": "#dfdacc",
+                        "on-surface-variant": "#444748"
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        lg: "2rem",
+                        xl: "3rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "margin-desktop": "64px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "container-max": "1200px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Montserrat"],
+                        "display-wordmark": ["Playfair Display"],
+                        "label-sm": ["Montserrat"],
+                        "body-md": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "accent-quote": ["Caveat"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "display-wordmark": ["32px", { lineHeight: "1.2", fontWeight: "700" }],
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+                        "headline-lg-mobile": ["20px", { lineHeight: "28px", fontWeight: "700" }],
+                        "accent-quote": ["18px", { lineHeight: "20px", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #e9e3d5;
+            color: #1a1a1a;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Custom Checkbox/Radio Styles */
+        .custom-radio {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #747878;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+        .custom-radio:checked {
+            border-color: #1a1a1a;
+        }
+        .custom-radio:checked::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background-color: #1a1a1a;
+            border-radius: 50%;
+        }
+
+        /* Toggle Switch */
+        .toggle-switch {
+            appearance: none;
+            width: 44px;
+            height: 24px;
+            background-color: #c4c7c7;
+            border-radius: 12px;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.2s;
+        }
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.2s;
+        }
+        .toggle-switch:checked {
+            background-color: #1a1a1a;
+        }
+        .toggle-switch:checked::after {
+            transform: translateX(20px);
+        }
+
+        /* Range Slider */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            cursor: pointer;
+            margin-top: -8px;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #747878;
+            border-radius: 2px;
+        }
+        
+        .transition-height {
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+<!-- Fixed Logo Anchor -->
+<div class="fixed top-6 left-6 z-50">
+<img alt="PayOut Logo Mark" class="h-8 w-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDolG1LwiLwrEWNjZqhNDkfPL-gAGx89usVpleCY3Bj0-h37W_9ldWBePjC7vHIbMg7-Cp-zE9q0OUPMVVOnh0mMhpgkcaLQoQGB33qTU77vvpa3m9nCNHQX17m7k0YCbxVCdhp_FDAfxJ-Um0LqmLOW-cvJ8lqhPvIOlh54Oj9NvTel-pcFQ2hUn6Jq27MA8wakfKOTinB2-SSJWrX_TycRI7BvKqz_tm28_bcjiBYZknOnwFiZCwE0fin9dTrpbvpEFs">
+</div>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-3xl mx-auto px-margin-mobile md:px-0 py-24 md:py-32 flex flex-col gap-stack-lg">
+<!-- Header Section -->
+<header class="flex flex-col gap-stack-sm">
+<span class="font-label-sm text-label-sm text-outline tracking-widest uppercase">Step 1 of 3 — Campaign Setup</span>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Where should this campaign run?</h1>
+</header>
+<!-- Scope Selection -->
+<section aria-labelledby="scope-label" class="flex flex-col gap-stack-md" role="radiogroup">
+<h2 class="sr-only" id="scope-label">Scope Selection</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Local Card -->
+<label class="group relative flex flex-col gap-2 p-6 rounded-2xl border-2 border-transparent hover:border-outline-variant bg-surface-container-highest cursor-pointer transition-all duration-120 has-[:checked]:border-on-surface has-[:checked]:bg-surface-dim">
+<div class="flex items-start justify-between">
+<span class="font-body-md text-body-md text-on-surface">Local</span>
+<input checked="" class="custom-radio mt-1" name="scope" onchange="toggleScope('local')" type="radio" value="local">
+</div>
+<p class="text-sm text-on-surface-variant font-medium">Reach people near a specific location</p>
+</label>
+<!-- National Card -->
+<label class="group relative flex flex-col gap-2 p-6 rounded-2xl border-2 border-transparent hover:border-outline-variant bg-surface-container-highest cursor-pointer transition-all duration-120 has-[:checked]:border-on-surface has-[:checked]:bg-surface-dim">
+<div class="flex items-start justify-between">
+<span class="font-body-md text-body-md text-on-surface">National</span>
+<input class="custom-radio mt-1" name="scope" onchange="toggleScope('national')" type="radio" value="national">
+</div>
+<p class="text-sm text-on-surface-variant font-medium">Reach people across the country</p>
+</label>
+</div>
+</section>
+<!-- Conditional Detail Section -->
+<section class="relative min-h-[300px]">
+<!-- Local Details -->
+<div class="transition-height max-h-[500px] opacity-100 flex flex-col gap-stack-md absolute top-0 left-0 w-full" id="local-details">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-widest">Set Your Location</label>
+<!-- Map Placeholder -->
+<div class="relative w-full h-48 rounded-2xl overflow-hidden bg-surface-container-high border border-outline-variant group">
+<img class="w-full h-full object-cover opacity-60 mix-blend-multiply" data-alt="A minimalist UI map placeholder showing a simplified street layout in soft oat and gray tones with a sharp black pin marker indicating a specific location." data-location="City Center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgqA2EuqB1VbJpEJ89aN8O_VNUdDsczTQj48CFtLrKrDeL49CGCN7tdqINWwCXAQ24CsXkcBRhMLhAiy5_z-SSz53oz7UTGd-k0ATXOjq8SICu6YvEnAzvuTb0lInGee-Ye7_DpjGxieggAExdqxOEEbcJAqmypxNwA4QujVRlHPiW5jckXe4u2tturzaNij_i8tbuwF9CTYJgGj2SZ5Gr8dtyeTz_uhZTN3mCmuLzrJ3IcFbmdKctPA">
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-on-surface drop-shadow-md">location_on</span>
+</div>
+<!-- Fake Search Input Overlay -->
+<div class="absolute top-4 left-4 right-4 bg-surface-container-lowest/80 backdrop-blur-sm rounded-full px-4 py-2 flex items-center border border-outline-variant focus-within:border-on-surface transition-colors">
+<span class="material-symbols-outlined text-outline mr-2 text-sm">search</span>
+<input class="bg-transparent border-none outline-none text-sm font-medium w-full text-on-surface placeholder:text-outline" placeholder="Search location..." type="text" value="Downtown Business District">
+</div>
+</div>
+<!-- Radius Slider -->
+<div class="flex flex-col gap-2 mt-2">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-outline uppercase">Radius</span>
+<span class="font-mono text-sm font-semibold text-on-surface bg-surface-container-highest px-3 py-1 rounded-full"><span id="radius-value">2.5</span> km</span>
+</div>
+<input class="w-full" max="50" min="1" oninput="document.getElementById('radius-value').innerText = this.value" step="0.5" type="range" value="2.5">
+</div>
+</div>
+<!-- National Details -->
+<div class="transition-height max-h-0 opacity-0 pointer-events-none flex flex-col gap-stack-md absolute top-0 left-0 w-full" id="national-details">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-widest">Reach Tier</label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-gutter" role="radiogroup">
+<label class="p-4 rounded-xl border border-outline-variant bg-transparent cursor-pointer hover:bg-surface-container-highest transition-colors flex items-center gap-3 has-[:checked]:border-on-surface has-[:checked]:bg-surface-dim">
+<input class="custom-radio" name="tier" type="radio" value="metro">
+<span class="font-body-md text-sm font-semibold">Metro Cities</span>
+</label>
+<label class="p-4 rounded-xl border border-outline-variant bg-transparent cursor-pointer hover:bg-surface-container-highest transition-colors flex items-center gap-3 has-[:checked]:border-on-surface has-[:checked]:bg-surface-dim">
+<input checked="" class="custom-radio" name="tier" type="radio" value="tier12">
+<span class="font-body-md text-sm font-semibold">Tier 1 + 2</span>
+</label>
+<label class="p-4 rounded-xl border border-outline-variant bg-transparent cursor-pointer hover:bg-surface-container-highest transition-colors flex items-center gap-3 has-[:checked]:border-on-surface has-[:checked]:bg-surface-dim">
+<input class="custom-radio" name="tier" type="radio" value="panindia">
+<span class="font-body-md text-sm font-semibold">Pan-India</span>
+</label>
+</div>
+</div>
+</section>
+<hr class="border-t border-outline-variant/30 my-4">
+<!-- Time Block Section -->
+<section class="flex flex-col gap-stack-md">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Choose your time block</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4" id="time-blocks">
+<!-- Morning -->
+<label class="relative flex flex-col p-4 rounded-2xl border-2 border-transparent bg-surface-container-highest cursor-pointer hover:border-outline-variant transition-all has-[:checked]:border-on-surface has-[:checked]:bg-surface-dim">
+<input class="absolute opacity-0 w-0 h-0 peer" name="time" onchange="updateTimeSelection()" type="checkbox" value="morning">
+<span class="font-label-sm text-label-sm uppercase mb-1">Morning</span>
+<span class="font-mono text-xs text-outline mb-4">6AM–11AM</span>
+<div class="mt-auto flex justify-between items-end">
+<span class="font-mono font-semibold">₹5 <span class="text-xs text-outline font-sans">/ view</span></span>
+<span class="material-symbols-outlined text-outline peer-checked:text-on-surface">wb_twilight</span>
+</div>
+</label>
+<!-- Afternoon -->
+<label class="relative flex flex-col p-4 rounded-2xl border-2 border-transparent bg-surface-container-highest cursor-pointer hover:border-outline-variant transition-all has-[:checked]:border-on-surface has-[:checked]:bg-surface-dim">
+<input checked="" class="absolute opacity-0 w-0 h-0 peer" name="time" onchange="updateTimeSelection()" type="checkbox" value="afternoon">
+<span class="font-label-sm text-label-sm uppercase mb-1">Afternoon</span>
+<span class="font-mono text-xs text-outline mb-4">11AM–4PM</span>
+<div class="mt-auto flex justify-between items-end">
+<span class="font-mono font-semibold">₹4 <span class="text-xs text-outline font-sans">/ view</span></span>
+<span class="material-symbols-outlined text-outline peer-checked:text-on-surface">light_mode</span>
+</div>
+</label>
+<!-- Evening -->
+<label class="relative flex flex-col p-4 rounded-2xl border-2 border-transparent bg-surface-container-highest cursor-pointer hover:border-outline-variant transition-all has-[:checked]:border-on-surface has-[:checked]:bg-surface-dim">
+<input class="absolute opacity-0 w-0 h-0 peer" name="time" onchange="updateTimeSelection()" type="checkbox" value="evening">
+<span class="font-label-sm text-label-sm uppercase mb-1">Evening</span>
+<span class="font-mono text-xs text-outline mb-4">4PM–9PM</span>
+<div class="mt-auto flex justify-between items-end">
+<span class="font-mono font-semibold">₹8 <span class="text-xs text-outline font-sans">/ view</span></span>
+<span class="material-symbols-outlined text-outline peer-checked:text-on-surface">partly_cloudy_night</span>
+</div>
+</label>
+<!-- Night -->
+<label class="relative flex flex-col p-4 rounded-2xl border-2 border-transparent bg-surface-container-highest cursor-pointer hover:border-outline-variant transition-all has-[:checked]:border-on-surface has-[:checked]:bg-surface-dim">
+<input class="absolute opacity-0 w-0 h-0 peer" name="time" onchange="updateTimeSelection()" type="checkbox" value="night">
+<span class="font-label-sm text-label-sm uppercase mb-1">Night</span>
+<span class="font-mono text-xs text-outline mb-4">9PM–6AM</span>
+<div class="mt-auto flex justify-between items-end">
+<span class="font-mono font-semibold">₹3 <span class="text-xs text-outline font-sans">/ view</span></span>
+<span class="material-symbols-outlined text-outline peer-checked:text-on-surface">bedtime</span>
+</div>
+</label>
+</div>
+<!-- Extend Slot Toggle -->
+<div class="flex flex-col gap-2 mt-4 p-4 bg-surface-container-high rounded-xl">
+<div class="flex items-center justify-between">
+<span class="font-body-md font-semibold text-sm">Extend your slot (optional)</span>
+<input class="toggle-switch" id="extend-toggle" onchange="toggleExtend()" type="checkbox">
+</div>
+<div class="text-sm text-on-surface-variant hidden mt-2" id="summary-line">
+<span class="font-medium" id="selected-blocks-text">Afternoon</span> selected — blended rate: <span class="font-mono font-semibold text-on-surface" id="blended-rate">₹4.00</span>/view
+                </div>
+</div>
+</section>
+<!-- Footer Actions -->
+<footer class="mt-8 flex justify-end pt-6">
+<button class="bg-[#a3a3a3] hover:bg-[#8f8f8f] text-[#1a1a1a] font-body-md font-semibold px-8 py-4 rounded-full shadow-md transition-all hover:scale-[1.02] flex items-center gap-2">
+                Continue to creative
+                <span class="material-symbols-outlined text-sm font-bold">arrow_forward</span>
+</button>
+</footer>
+</main>
+<script>
+        function toggleScope(scope) {
+            const localDetails = document.getElementById('local-details');
+            const nationalDetails = document.getElementById('national-details');
+            
+            if (scope === 'local') {
+                localDetails.style.maxHeight = '500px';
+                localDetails.style.opacity = '1';
+                localDetails.style.pointerEvents = 'auto';
+                
+                nationalDetails.style.maxHeight = '0';
+                nationalDetails.style.opacity = '0';
+                nationalDetails.style.pointerEvents = 'none';
+            } else {
+                localDetails.style.maxHeight = '0';
+                localDetails.style.opacity = '0';
+                localDetails.style.pointerEvents = 'none';
+                
+                nationalDetails.style.maxHeight = '500px';
+                nationalDetails.style.opacity = '1';
+                nationalDetails.style.pointerEvents = 'auto';
+            }
+        }
+
+        let isExtended = false;
+        const rates = { morning: 5, afternoon: 4, evening: 8, night: 3 };
+        
+        function toggleExtend() {
+            isExtended = document.getElementById('extend-toggle').checked;
+            const checkboxes = document.querySelectorAll('input[name="time"]');
+            
+            // If not extended, enforce single selection behavior
+            if (!isExtended) {
+                let checkedCount = 0;
+                let lastChecked = null;
+                checkboxes.forEach(cb => {
+                    if (cb.checked) {
+                        checkedCount++;
+                        lastChecked = cb;
+                    }
+                });
+                
+                if (checkedCount > 1) {
+                    checkboxes.forEach(cb => {
+                        if (cb !== lastChecked) cb.checked = false;
+                    });
+                }
+            }
+            
+            document.getElementById('summary-line').classList.toggle('hidden', !isExtended);
+            updateTimeSelection();
+        }
+
+        function updateTimeSelection() {
+            const checkboxes = document.querySelectorAll('input[name="time"]');
+            
+            // Enforce single select if extend is off
+            if (!isExtended) {
+                checkboxes.forEach(cb => {
+                    cb.addEventListener('click', function(e) {
+                        if (!isExtended) {
+                            checkboxes.forEach(otherCb => {
+                                if (otherCb !== this) otherCb.checked = false;
+                            });
+                        }
+                    }, { once: true }); // Prevent adding multiple listeners
+                });
+            }
+
+            if (isExtended) {
+                let selectedNames = [];
+                let totalRate = 0;
+                
+                checkboxes.forEach(cb => {
+                    if (cb.checked) {
+                        selectedNames.push(cb.value.charAt(0).toUpperCase() + cb.value.slice(1));
+                        totalRate += rates[cb.value];
+                    }
+                });
+                
+                if (selectedNames.length > 0) {
+                    const blended = (totalRate / selectedNames.length).toFixed(2);
+                    document.getElementById('selected-blocks-text').innerText = selectedNames.join(' + ');
+                    document.getElementById('blended-rate').innerText = '₹' + blended;
+                } else {
+                    document.getElementById('selected-blocks-text').innerText = 'None';
+                    document.getElementById('blended-rate').innerText = '₹0.00';
+                }
+            }
+        }
+        
+        // Initial setup for time blocks
+        document.querySelectorAll('input[name="time"]').forEach(cb => {
+            cb.addEventListener('change', function() {
+                if (!isExtended && this.checked) {
+                    document.querySelectorAll('input[name="time"]').forEach(other => {
+                        if (other !== this) other.checked = false;
+                    });
+                }
+                if(isExtended) updateTimeSelection();
+            });
+        });
+    </script>
+</body></html>
